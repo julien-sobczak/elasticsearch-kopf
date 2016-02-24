@@ -11,10 +11,13 @@
       <th class="box cluster-map-header-cluster-actions">
         <div class="row">
           <div class="col-lg-3 col-xs-6">
+            <!-- Lock to disable allocation on cluster -->
+            <!--
             <a class="cluster-map-header-cluster-action">
               <i class="fa fa-lock danger-action" ng-show="cluster.disableAllocation === 'true'" ng-click="enableAllocation()" title="enable shard allocation"></i>
               <i class="fa fa-unlock-alt" ng-show="cluster.disableAllocation !== 'true'" ng-click="disableAllocation()" title="disable shard allocation"></i>
             </a>
+            -->
           </div>
           <div class="col-lg-3 col-xs-6">
             <a class="cluster-map-header-cluster-action" ng-click="expandedView = !expandedView">
@@ -30,6 +33,8 @@
           </div>
           <div class="col-lg-3 col-xs-6">
             <div class="dropdown">
+              <!-- Disable cluster operations (Close indices, optimize, ...)  -->
+              <!--
               <a data-toggle="dropdown" href="#" target="_self" class="cluster-map-header-cluster-action">
                 <i class="fa fa-caret-down"></i>
               </a>
@@ -64,6 +69,7 @@
                   </a>
                 </li>
               </ul>
+              -->
             </div>
           </div>
         </div>

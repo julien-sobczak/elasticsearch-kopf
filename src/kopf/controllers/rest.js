@@ -102,6 +102,22 @@ kopf.controller('RestController', ['$scope', '$location', '$timeout',
           AlertService.info('You are executing a GET request with body ' +
               'content. Maybe you meant to use POST or PUT?');
         }
+
+        // Restrict POST operations: only _search and _count are allowed
+        if ($scope.request.method == 'POST') {
+          var req = path;
+          var indexParameters = req.lastIndexOf('?');
+          if (indexParameters !== -1) {
+            req = req.substring(0, indexParameters);
+          }
+          if (!req.endsWith('_search') && !req.endsWith('_count')) {
+            AlertService.error(
+                'Only _search and _count are allowed with the POST method');
+            // Do not send the request!
+            return;
+          }
+        }
+
         ElasticService.clusterRequest($scope.request.method,
             path, {}, $scope.request.body,
             function(response) {
