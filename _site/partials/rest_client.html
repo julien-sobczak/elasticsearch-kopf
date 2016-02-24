@@ -39,9 +39,11 @@
 									<span>
 										<select ng-model="request.method" class="form-control input-sm rest-client-request-method">
 											<option value="GET" selected="selected">GET</option>
-											<option value="PUT">PUT</option>
-											<option value="POST">POST</option>
-											<option value="DELETE">DELETE</option>
+        <!-- Authorize only GET requests -->
+											<!--<option value="PUT">PUT</option>-->
+											<!-- We should keep POST for _search... -->
+                                                                                        <option value="POST">POST</option>
+											<!--<option value="DELETE">DELETE</option>-->
 										</select>
 										<span class="rest-client-request-url typeahead-demo">
 											<input type="text"

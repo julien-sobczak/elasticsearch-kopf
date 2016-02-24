@@ -21,5 +21,4 @@ function ESConnection(url, withCredentials) {
       this.host = url;
     }
   }
-
 }
