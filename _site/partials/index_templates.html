@@ -37,9 +37,11 @@
                   <button type="submit" class="btn btn-default input-sm" ng-click="editor.format()">
                     <i class="fa fa-align-left"></i> format
                   </button>
+                  <!--
                   <button type="submit" class="btn btn-primary input-sm" ng-click="createIndexTemplate()">
                     <i class="fa fa-plus-circle"></i> save
                   </button>
+                  -->
                 </div>
               </div>
             </div>
@@ -91,12 +93,18 @@
                       </td>
                       <td>
                         {{template.body.template}}
+                        <!-- Disable unsafe action -->i
+                        <!--
                         <a data-toggle="modal" target="_self" href="#confirm_dialog"
                            class="remove-icon" data-backdrop="static">
                           <i class="fa fa-times remove-icon" title="delete template" ng-click="deleteIndexTemplate(template)"></i>
                         </a>
+                        -->
+                        <!-- Note: edit is used to copy/paste the mapping. -->
+                        <!-- As the save button was removed above, there is no problem. -->
+                        <!-- We change the icon to replace the pencil with a more appropriate icon -->
                         <a target="_self" class="details-icon" href="">
-                          <i class="fa fa-pencil details-icon" title="edit template" ng-click="loadIndexTemplate(template)"></i>
+                          <i class="fa fa-clipboard details-icon" title="edit template" ng-click="loadIndexTemplate(template)"></i>
                         </a>
                         <a data-toggle="modal" target="_self" href="#"
                            class="details-icon" data-backdrop="static">
